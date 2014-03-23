@@ -1,0 +1,5 @@
+*
+!/.devscripts
+!/.svnpath
+!/.gitignore.d
+!/.gitignore.d/devscripts

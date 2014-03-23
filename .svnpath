@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+$url =~ s@(pkg-subversion/src)/[\d.x]+@$1/tags@;
+1
