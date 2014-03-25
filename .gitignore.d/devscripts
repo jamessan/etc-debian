@@ -3,3 +3,6 @@
 !/.svnpath
 !/.gitignore.d
 !/.gitignore.d/devscripts
+!/.local
+!/.local/bin
+!/.local/bin/machines
