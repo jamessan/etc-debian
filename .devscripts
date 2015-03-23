@@ -5,3 +5,4 @@ USCAN_SYMLINK=no
 DEBCHANGE_MULTIMAINT_MERGE=yes
 DEBDIFF_SHOW_DIFFSTAT=yes
 RMADISON_URL_MAP_UBUNTU=http://qa.debian.org/cgi-bin/madison.cgi?table=ubuntu
+DEBCHECKOUT_USER=jamessan
