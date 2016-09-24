@@ -1,8 +1,9 @@
 *
 !/.devscripts
-!/.svnpath
 !/.gitignore.d
-!/.gitignore.d/devscripts
+!/.gitignore.d/debian
 !/.local
 !/.local/bin
 !/.local/bin/machines
+!/.sbuildrc
+!/.svnpath

@@ -1,0 +1,21 @@
+# Directory for writing build logs to
+$log_dir = "$HOME/.cache/sbuild/logs";
+$source_only_changes = 1;
+
+$environment_filter = [
+	'^PATH$',
+	'^DEB(IAN|SIGN)?_[A-Z_]+$',
+	# debhelper
+	'^DH_[A-Z_]+$',
+	# devscripts
+	'^DEB(EMAIL|FULLNAME)$',
+	'^(C(PP|XX)?|LD|F)FLAGS(_APPEND)?$',
+	'^USER(NAME)?$',
+	'^LOGNAME$',
+	'^HOME$',
+	'^TERM$',
+	'^SHELL$'
+];
+
+# don't remove this, Perl needs it:
+1;
