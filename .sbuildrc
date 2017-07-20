@@ -17,5 +17,14 @@ $environment_filter = [
 	'^SHELL$'
 ];
 
+$run_lintian = 1;
+$lintian_opts = [
+	'--color=auto',
+	'--info',
+	'--display-experimental',
+	'--pedantic',
+	'--display-level', '+wishlist',
+];
+
 # don't remove this, Perl needs it:
 1;
