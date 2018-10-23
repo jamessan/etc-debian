@@ -8,4 +8,5 @@
 !/.local
 !/.local/bin
 !/.local/bin/machines
+!/.reportbugrc
 !/.sbuildrc
