@@ -1,4 +1,7 @@
 *
+!/.config
+!/.config/lintian
+!/.config/lintian/lintianrc
 !/.devscripts
 !/.gitignore.d
 !/.gitignore.d/debian
