@@ -1,3 +1,0 @@
-#!/usr/bin/perl
-$url =~ s@(pkg-subversion/src)/(?!tags)[^/\n]+@$1/tags@;
-1
