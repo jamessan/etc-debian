@@ -2,19 +2,16 @@
 $log_dir = "$HOME/.cache/sbuild/logs";
 $source_only_changes = 1;
 
+use Dpkg::Build::Info;
+
 $environment_filter = [
-	'^PATH$',
+	Dpkg::Build::Info::get_build_env_allowed(),
 	'^DEB(IAN|SIGN)?_[A-Z_]+$',
 	# debhelper
 	'^DH_[A-Z_]+$',
 	# devscripts
 	'^DEB(EMAIL|FULLNAME)$',
-	'^(C(PP|XX)?|LD|F)FLAGS(_APPEND)?$',
-	'^USER(NAME)?$',
-	'^LOGNAME$',
-	'^HOME$',
-	'^TERM$',
-	'^SHELL$'
+	'^(C(PP|XX)?|LD|F)FLAGS_APPEND$',
 ];
 
 $run_lintian = 1;
