@@ -19,8 +19,7 @@ $lintian_opts = [
 	'--color=auto',
 	'--info',
 	'--display-experimental',
-	'--pedantic',
-	'--display-level', '+wishlist',
+	'--display-level', '>=pedantic',
 ];
 
 # don't remove this, Perl needs it:
