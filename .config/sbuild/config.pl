@@ -4,11 +4,11 @@ $source_only_changes = 1;
 $chroot_mode = 'unshare';
 
 $unshare_tmpdir_template = '/dev/shm/tmp.sbuild.XXXXXXXXXX';
-$unshare_bind_mounts = [ { directory => "$HOME/.cache/ccache", mountpoint => "/build/ccache" }, { directory => "$HOME/src/debian.org/debcargo", mountpoint => "$HOME/src/debian.org/debcargo" } ];
+$unshare_bind_mounts = [ { directory => "$HOME/.cache/ccache", mountpoint => "/build/ccache" } ];
 $unshare_mmdebstrap_keep_tarball = 1;
 $unshare_mmdebstrap_env_cmd = [ 'env', 'TMPDIR=/dev/shm/' ];
 $unshare_mmdebstrap_extra_args = [
-	'*' => ['--include=debhelper', q#--aptopt='Acquire::http { Proxy "http://127.0.0.1:3142"; }'#, "$HOME/.config/sbuild/%r.sources"],
+	'*' => ['--include=debhelper', q#--aptopt=Acquire::http { Proxy "http://127.0.0.1:3142"; }#, "$HOME/.config/sbuild/%r.sources"],
 	'debcargo-%r-%a-sbuild' => ['--include=dh-cargo,cargo'],
 	'stable-backports' => [
 		'--setup-hook=echo "deb http://deb.debian.org/debian stable-backports main" > "$1"/etc/apt/sources.list.d/stable-backports.list',
@@ -23,6 +23,7 @@ $path = "/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
 $build_path = "/build/package/";
 $dsc_dir = "package";
 $autopkgtest_opts = [ '--apt-upgrade', '--env=CCACHE_DIR=/build/ccache', '--env=PATH=/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games' ];
+$autopkgtest_root_args = '';
 $autopkgtest_virt_server_options = [ '--tarball', "$HOME/.cache/sbuild/%r-%a-sbuild.tar.xz", '--prefix=/dev/shm/tmp.autopkgtest.', '--bind', "$HOME/.cache/ccache", '/build/ccache' ];
 $autopkgtest_virt_server = 'autopkgtest-virt-unshare';
 
